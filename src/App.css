@@ -10,7 +10,7 @@ body {
   min-height: 200px;
   max-width: 60%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 50px 20px;
   border-radius: 10px;
   background-color: #474747;
 }
@@ -82,5 +82,23 @@ ul li {
 }
 .info svg {
   font-size: 25px;
+  transform: translateY(5px);
+}
+.error {
+  display: block;
+  width: 50%;
+  height: auto;
+  padding: 120px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #303030;
+  margin: 10% auto;
+}
+.error p {
+  font-size: 30px;
+  font-family: 'Chakra Petch', sans-serif;
+  color: #c5958b;
+}
+.error p svg {
   transform: translateY(5px);
 }

@@ -3,10 +3,13 @@ import {useEffect, useState} from "react";
 import Main from "./components/Main";
 import Weather from "./components/Weather";
 import Wind from "./components/Wind";
+import { BsFillEmojiSmileFill } from 'react-icons/bs';
 
 function App() {
   const [fetchedData, setFetchedData] = useState();
   const [locationLink, setLocationLink] = useState('');
+  const [error, setError] = useState(false);
+
   useEffect(()=>{
     // let lat = 52.1961472;
     // let lon = 21.0272256;
@@ -16,9 +19,15 @@ function App() {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
           (position) => {
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
-              console.log('lat:', lat, 'lon:',lon)
+              if (position.coords.latitude) {
+                  lat = position.coords.latitude;
+                  lon = position.coords.longitude;
+                  setError(false);
+              }
+              else {
+                  setError(true);
+              }
+              // console.log('lat:', lat, 'lon:',lon)
 
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
             fetch(url)
@@ -31,10 +40,11 @@ function App() {
     }
 
   }, []);
-  console.log(fetchedData);
+  // console.log(fetchedData);
 
   return (
-      fetchedData &&
+      fetchedData
+          ?
           <div className="App">
             <div className='location'>
               <h1>Current Weather Application</h1>
@@ -57,6 +67,10 @@ function App() {
                   dt={fetchedData.dt}
               />
             </div>
+          </div>
+          :
+          <div className='error'>
+              <p>Please allow for location check, it is necessary for fetching weather data in Your area and starting the application.  <BsFillEmojiSmileFill/></p>
           </div>
   );
 }
