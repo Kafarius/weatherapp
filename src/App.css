@@ -1,38 +1,86 @@
-.App {
+body {
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.conditions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: auto;
+  height: auto;
+  min-height: 200px;
+  max-width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #474747;
+}
+.conditions div {
+  font-family: 'Chakra Petch', sans-serif;
+  background-color: #303030;
+  color: #cccccc;
+  min-width: 24%;
+}
+.location {
+  display: block;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.location h1 {
+  color: white;
+  font-family: 'Black Ops One', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.location h2 {
+  letter-spacing: 2px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.location h2, .location i {
+  color: #cfcfcf;
+}
+.location a {
+  text-decoration: none;
+  display: block;
+  width: 15%;
+  margin: 0 auto  ;
+}
+.location a h2:hover  {
+  color: #7ac57e;
+  text-decoration: underline;
+}
+.location a h2 {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Chakra Petch', sans-serif;
+}
+ul {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style-type: none;
+  padding: 20px;
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-link {
-  color: #61dafb;
+ul li {
+  text-align: center;
+  margin: 10px;
 }
+.infoBox {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #b7f3d5;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.info {
+  color: #e6e6e6;
+  font-weight: bold;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.info svg {
+  font-size: 25px;
+  transform: translateY(5px);
 }

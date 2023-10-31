@@ -1,0 +1,13 @@
+.weather {
+    display: block;
+    min-width: 200px;
+    min-height: 200px;
+    /*background-color: #95cfb1;*/
+    border-radius: 10px;
+}
+.weather img {
+    background-color: #b7f3d5;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}

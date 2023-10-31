@@ -1,0 +1,12 @@
+.wind {
+    display: block;
+    min-width: 200px;
+    min-height: 200px;
+    /*background-color: #95cfb1;*/
+    border-radius: 10px;
+
+}
+.wind svg {
+    display: block;
+    margin: 0 auto;
+}
